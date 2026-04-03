@@ -36,13 +36,15 @@ export async function POST(request: NextRequest) {
     );
 
    const response =  NextResponse.json(
-      { message: "Login Successfull", success: true },
+      { message: "Login Successfull", success: true,user },
       { status: 200 },
     );
 
     response.cookies.set("token",token,{
         httpOnly:true
     })
+
+    console.log(response)
 
     return response
   } catch (error: any) {
