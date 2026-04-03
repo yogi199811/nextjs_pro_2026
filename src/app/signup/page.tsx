@@ -2,7 +2,11 @@ import React from 'react'
 
 const page = () => {
   return (
-    <div>page signup</div>
+    <>
+    <h1>Welcome</h1>
+    <div>page signup </div>
+    </>
+
   )
 }
 
