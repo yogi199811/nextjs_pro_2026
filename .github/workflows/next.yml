@@ -11,24 +11,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ Get your code
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      # 2️⃣ Setup Node.js
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 20
+          cache: "npm"
 
-      # 3️⃣ Install dependencies
       - name: Install Dependencies
-        run: npm install
+        run: npm ci
 
-      # 4️⃣ Lint check
       - name: Run Lint
         run: npm run lint
 
-      # 5️⃣ Build Next.js app
       - name: Build App
         run: npm run build
